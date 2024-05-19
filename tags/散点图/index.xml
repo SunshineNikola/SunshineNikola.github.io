@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>散点图 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E6%95%A3%E7%82%B9%E5%9B%BE/</link>
+    <description>Recent content in 散点图 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:44:18 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E6%95%A3%E7%82%B9%E5%9B%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab 绘制三维散点图并进行曲面拟合</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/lisan/</link>
+      <pubDate>Mon, 20 May 2024 00:44:18 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/lisan/</guid>
+      <description>Matlab散点绘制及曲面拟合 近期在进行APA自动辅助泊车项目的测试过程中遇到多变量对结果的影响分析问题。需要对自动泊车库位检测系统中车辆行</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>相机标定 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/</link>
+    <description>Recent content in 相机标定 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:39:28 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E7%9B%B8%E6%9C%BA%E6%A0%87%E5%AE%9A/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通过 Matlab cameraCalibrator Tool 标定相机获取畸变参数</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/camcalibration/</link>
+      <pubDate>Mon, 20 May 2024 00:39:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/camcalibration/</guid>
+      <description>摄像机标定 本文目的在于记录对相机进行径向及切向畸变的简单标定方法* 计算机视觉进行检测识别前均需对相机进行标定。本文简单介绍了通过Matlab</description>
+    </item>
+  </channel>
+</rss>
