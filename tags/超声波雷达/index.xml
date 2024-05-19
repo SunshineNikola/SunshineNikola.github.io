@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>超声波雷达 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/</link>
+    <description>Recent content in 超声波雷达 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:26:47 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APA系统中超声波雷达的安装调试使用说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/apa/</link>
+      <pubDate>Mon, 20 May 2024 00:26:47 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/apa/</guid>
+      <description>@[TOC] 前言： 在传统APA自动泊车系统中，通常使用超声波雷达进行车辆前后辈避障以及侧向车位探测。目前市场上大多数带有自动泊车功能的车辆均配有12个</description>
+    </item>
+  </channel>
+</rss>

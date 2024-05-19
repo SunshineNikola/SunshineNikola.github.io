@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ROS on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/ros/</link>
+    <description>Recent content in ROS on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 May 2024 23:47:00 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/ros/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ROS 初级教程学习笔记</title>
+      <link>https://SunshineNikola.github.io/2024/05/19/ros/</link>
+      <pubDate>Sun, 19 May 2024 23:47:00 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/19/ros/</guid>
+      <description>ROS 初级教程学习笔记 a 环境的配置及软件包的创建和编译 b ROS 节点，话题，服务和参数 (rqt_console和roslaunch)调试 c 创建ROS消</description>
+    </item>
+  </channel>
+</rss>

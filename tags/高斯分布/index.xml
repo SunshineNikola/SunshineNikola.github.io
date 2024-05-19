@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>高斯分布 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83/</link>
+    <description>Recent content in 高斯分布 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:48:28 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E9%AB%98%E6%96%AF%E5%88%86%E5%B8%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab 离散数据的高斯分布曲线绘制</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/shuju/</link>
+      <pubDate>Mon, 20 May 2024 00:48:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/shuju/</guid>
+      <description>在研发测试工作中经常会有一些工程数据的处理，其中大部分数据都是符合正态分布的。为了对数据进行整理分析通常我们会求出数据的误差平均数，最大最小</description>
+    </item>
+  </channel>
+</rss>

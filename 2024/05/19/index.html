@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,14 +10,14 @@
     <meta property="og:type" content="article">
 
     
-    <meta property="og:image" content="/img/trunk.png">
-    <meta property="twitter:image" content="/img/trunk.png" />
+    <meta property="og:image" content="/img/ros.png">
+    <meta property="twitter:image" content="/img/ros.png" />
     
 
     
-    <meta name="title" content="LearningWithShen" />
-    <meta property="og:title" content="LearningWithShen" />
-    <meta property="twitter:title" content="LearningWithShen" />
+    <meta name="title" content="ROS 初级教程学习笔记" />
+    <meta property="og:title" content="ROS 初级教程学习笔记" />
+    <meta property="twitter:title" content="ROS 初级教程学习笔记" />
     
 
     
@@ -34,7 +34,7 @@
     <meta name="keyword"  content="尼克汽车, NickAuto, 自动驾驶, 汽车出海, 航空航天">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>LearningWithShen | 尼克汽车 | NickAuto</title>
+    <title>ROS 初级教程学习笔记 | 尼克汽车 | NickAuto</title>
 
     <link rel="canonical" href="/2024/05/19/">
 
@@ -106,6 +106,10 @@
                         </li>
                         
                         <li>
+                            <a href="/categories/auto/">🚘auto</a>
+                        </li>
+                        
+                        <li>
                             <a href="/categories/%EF%B8%8Ftech/">🛰️tech</a>
                         </li>
                         
@@ -160,7 +164,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/trunk.png')
+        background-image: url('/img/ros.png')
     }
 </style>
 
@@ -172,17 +176,17 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/%E6%B8%85%E5%8D%8E" title="清华">
-                            清华
+                        <a class="tag" href="/tags/ros" title="ROS">
+                            ROS
                         </a>
                         
-                        <a class="tag" href="/tags/python" title="python">
-                            python
+                        <a class="tag" href="/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA" title="机器人">
+                            机器人
                         </a>
                         
                     </div>
-                    <h1>LearningWithShen</h1>
-                    <h2 class="subheading">Linux下一切皆文件</h2>
+                    <h1>ROS 初级教程学习笔记</h1>
+                    <h2 class="subheading">The Robot Operating System (ROS) is a set of software libraries and tools that help you build robot applications.</h2>
                     <span class="meta">
                         
                             Posted by 
@@ -216,59 +220,382 @@
                 post-container">
 
                 
-                <h1 id="learningwithshen">LearningWithShen</h1>
-<h3 id="书籍">📙书籍</h3>
-<p>第一推动丛书：综合系列：逻辑的引擎     理论</p>
+                <h1 id="ros-初级教程学习笔记">ROS 初级教程学习笔记</h1>
+<p>a  环境的配置及软件包的创建和编译</p>
+<p>b  ROS 节点，话题，服务和参数  (rqt_console和roslaunch)调试</p>
+<p>c  创建ROS消息和ROS 服务(rosmsg, rossrv, roscp 命令行使用)，使用python&amp;C++编写消息发布器和订阅器，并测试</p>
+<p>d  编写Service和Client，并测试</p>
+<p>e  录制和回放bag 包</p>
+<h2 id="一-安装配置">一. 安装配置</h2>
+<h3 id="1-参考csdn链接山水ubuntu-ros-kinetic安装httpsblogcsdnnetweixin_43159148articledetails83375218">1. 参考CSDN链接<a href="https://blog.csdn.net/weixin_43159148/article/details/83375218">山水Ubuntu ROS Kinetic安装</a></h3>
+<h3 id="2-管理空间">2. 管理空间</h3>
+<p>查看环境变量：</p>
 <blockquote>
-<p>计算机理论基础。计算机产生的历史，计算机理论基础数理逻辑。可计算问题</p>
+<p>$ printenv | grep ROS</p>
 </blockquote>
-<p>第二本：现代计算机的硬件基础    工程实现</p>
+<p><strong>注意：</strong> 在所有教程中你将会经常看到分别针对 <a href="http://wiki.ros.org/rosbuild">rosbuild</a> 和 <a href="http://wiki.ros.org/catkin">catkin</a> 的不同操作说明，这是因为目前有两种不同的方法可以用来组织和编译ROS应用程序。一般而言，rosbuild 比较简单也易于使用，而 catkin 使用了更加标准的 CMake 规则，所以比较复杂，但是也更加灵活，特别是对于那些想整合外部现有代码或者想发布自己代码的人。关于这些如果你想了解得更全面请参阅 <a href="http://wiki.ros.org/catkin_or_rosbuild">catkin or rosbuild（英文页面）</a>。</p>
+<h3 id="3-创建ros工作空间以catkin-为准">3. 创建ROS工作空间(以catkin 为准)</h3>
 <blockquote>
-<p>Code 编码——隐匿在计算机软硬件背后的语言</p>
-</blockquote>
-<p>第三本：计算机编程入门课</p>
+<pre tabindex="0"><code>$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+</code></pre></blockquote>
+<p>一般创建完成后需要刷新环境，使用source命令</p>
 <blockquote>
-<p><a href="%5Bhttps://wizardforcel.gitbooks.io/sicp-py/content/%5D(https://wizardforcel.gitbooks.io/sicp-py/content/)">SICP Python 描述 中文版</a></p>
+<p>source devel/setup.bash</p>
 </blockquote>
-<p>第四本：Python3 语言参考手册</p>
+<h2 id="二-ros文件系统介绍">二. ROS文件系统介绍</h2>
+<h3 id="1-安装ros-kinetic-ros-tutorials程序包">1. 安装ros-kinetic-ros-tutorials程序包</h3>
 <blockquote>
-<p>Python 语言参考手册 (<a href="https://docs.python.org/zh-cn/3/reference/index.html">https://docs.python.org/zh-cn/3/reference/index.html</a>)</p>
+<p>sudo apt-get install ros-kinetic-ros-tutorials</p>
 </blockquote>
-<p>第五本：流畅的PYthon</p>
-<blockquote>
-<p>见附件</p>
-</blockquote>
-<p>第六本：高斯&amp;温伯格：你的灯亮着吗？发现问题</p>
-<blockquote>
-<p>见附件</p>
-</blockquote>
-<h3 id="视频">🎬视频</h3>
-<p>第一个：MIT 计算机科学和PYTHON 编程导论</p>
-<blockquote>
-<p><a href="https://www.bilibili.com/video/BV1sE411f7n9?from=search&amp;seid=6760370155387674003">MIT 计算机科学和PYTHON 编程导论</a></p>
-</blockquote>
-<p><a href="https://www.csail.mit.edu/person/eric-grimson">Eric Grimson</a></p>
-<p>第二个：MIT《计算机科学“补漏”课》课程 (2020)</p>
-<blockquote>
-<p><a href="https://www.bilibili.com/video/BV1aE41157q6?from=search&amp;seid=14962191851968854653">MIT《计算机科学“补漏”课》课程 (2020)</a></p>
-</blockquote>
-<p>第三个：计算机科学和Python 编程</p>
-<blockquote>
-<p>MITx:6.00.1x Introduction to Computer Science and Programming Using Python](<a href="https://www.bilibili.com/video/BV17W411Z7rb">https://www.bilibili.com/video/BV17W411Z7rb</a>)</p>
-</blockquote>
-<p>第四个：地图搜索算法</p>
-<blockquote>
-<p><a href="https://www.bilibili.com/video/BV1nE411u7G2?from=search&amp;seid=2919950581063385986">地图搜索</a></p>
-</blockquote>
-<h3 id="作业">作业</h3>
-<p>第一个：去掉下列代码注释部分生成新文件 名称：<a href="http://test01.py/">test01.py</a></p>
+<h3 id="2-文件系统概念">2. 文件系统概念</h3>
 <ul>
-<li>*知识点：**文件IO，字符串，生成器，正则或者状态机。</li>
+<li>
+<p>Packages  软件包，ROS程序代码的组织单元，包括：程序库，可执行文件，脚本&amp;other file</p>
+</li>
+<li>
+<p>Manifest(package.xml):清单，对 ‘软件包’ 相关信息的描述。定义依赖关系，包括版本，维护者，许可协议等</p>
+</li>
+</ul>
+<h3 id="3-文件系统工具">3. 文件系统工具</h3>
+<p>rospack</p>
+<blockquote>
+<p>rospack find [包名称]</p>
+<p>$ rospock find roscpp      输出：YOUR_INSTALL_PATH/share/roscpp</p>
+</blockquote>
+<p>roscd</p>
+<p>roscd是rosbash 命令集的一部分，允许直接切换工作目录至软件包或软件包集.</p>
+<blockquote>
+<p>roscd  [本地包名称[/子目录]]</p>
+<p>roscd roscpp</p>
+</blockquote>
+<p>roscd log</p>
+<blockquote>
+<p>也属于rosbash 命令集,直接切换到日志文件夹下</p>
+</blockquote>
+<p>rosls</p>
+<blockquote>
+<p>rosbash 命令集可以直接按照软件包名称ls，不需要绝对路径</p>
+</blockquote>
+<p>Tab自动补全</p>
+<blockquote>
+<p>Tab补全等同于linux   Tab</p>
+</blockquote>
+<h2 id="三-创建ros-程序包">三. 创建ROS 程序包</h2>
+<h3 id="1-catkin程序包的构成catkin程序包必须符合以下文件">1. catkin程序包的构成（catkin程序包必须符合以下文件）</h3>
+<ul>
+<li>程序包必须包含package.xml文件</li>
+<li>程序必须包含CMakeLists.txt 文件，而Catkin metapackages中必须包括一个对CMakeList.txt 文件的引用</li>
+<li>每个目录下只能有一个程序包，不能嵌套或者多个程序包共存</li>
+</ul>
+<h3 id="2-catkin工作空间中的程序包">2. catkin工作空间中的程序包</h3>
+<p>工作空间中的程序包组织形式</p>
+<pre tabindex="0"><code>workspace_folder/        -- WORKSPACE
+  src/                   -- SOURCE SPACE
+    CMakeLists.txt       -- &#39;Toplevel&#39; CMake file, provided by catkin
+    package_1/
+      CMakeLists.txt     -- CMakeLists.txt file for package_1
+      package.xml        -- Package manifest for package_1
+    ...
+    package_n/
+      CMakeLists.txt     -- CMakeLists.txt file for package_n
+      package.xml        -- Package manifest for package_n
+</code></pre><h3 id="3-创建catkin程序包">3. 创建catkin程序包</h3>
+<p>切换到前边创建的catkin工作空间中的src目录下</p>
+<blockquote>
+<pre tabindex="0"><code># You should have created this in the Creating a Workspace Tutorial
+$ cd ~/catkin_ws/src
+</code></pre></blockquote>
+<p>使用catkin_create_pkg 创建新程序包，依赖于std_msgs, roscpp rospy</p>
+<blockquote>
+<pre tabindex="0"><code>$ catkin_create_pkg beginner_tutorials std_msgs rospy roscpp
+</code></pre></blockquote>
+<h3 id="4-程序包的依赖关系">4. 程序包的依赖关系</h3>
+<p>程序包通常拥有一级依赖和间接依赖可以用以下命令查询</p>
+<blockquote>
+<pre tabindex="0"><code>$ rospack depends1 beginner_tutorials 
+</code></pre></blockquote>
+<p>间接依赖查询</p>
+<blockquote>
+<pre tabindex="0"><code>$ rospack depends beginner_tutorials
+</code></pre></blockquote>
+<h3 id="5-自定义程序包">5. 自定义程序包</h3>
+<p>package.xml   &amp;    CMakeLists.txt 的自定义编写</p>
+<h2 id="四-编译ros程序包">四. 编译ROS程序包</h2>
+<p><em>如果通过apt及软件包管理工具安装系统默认安装好依赖项</em></p>
+<h3 id="1-catkin_make工具的使用">1. catkin_make工具的使用</h3>
+<p>在catkin工作空间下</p>
+<blockquote>
+<pre tabindex="0"><code>$ catkin_make [make_targets] [-DCMAKE_VARIABLES=...]
+</code></pre></blockquote>
+<p>工作流程一般为,也可通过&ndash;source my_src  指定外部源码位置</p>
+<blockquote>
+<p>$ catkin_make                #编译程序包</p>
+<p>$ catkin_make install    #安装程序包</p>
+</blockquote>
+<h3 id="2-编译自己的程序包">2. 编译自己的程序包</h3>
+<p>切换到catkin工作空间下</p>
+<blockquote>
+<p>$ cd ~/catkin_ws/</p>
+<p>$ ls src</p>
+</blockquote>
+<p>使用catkin_make 编译</p>
+<blockquote>
+<p>$ catkin_make</p>
+</blockquote>
+<p>编译完成可使用ls 查看工作空间下自动生成的文件，包括：build     devel   src</p>
+<h2 id="五-理解ros-节点">五. 理解ROS 节点</h2>
+<h3 id="1-安装轻量级模拟器">1. 安装轻量级模拟器</h3>
+<blockquote>
+<pre tabindex="0"><code>$ sudo apt-get install ros-&lt;distro&gt;-ros-tutorials
+</code></pre></blockquote>
+<p>概念术语</p>
+<blockquote>
+<ul>
+<li><a href="http://wiki.ros.org/Nodes">Nodes</a>:节点,一个节点即为一个可执行文件，它可以通过ROS与其它节点进行通信。</li>
+<li><a href="http://wiki.ros.org/Messages">Messages</a>:消息，消息是一种ROS数据类型，用于订阅或发布到一个话题。</li>
+<li><a href="http://wiki.ros.org/Topics">Topics</a>:话题,节点可以发布消息到话题，也可以订阅话题以接收消息。</li>
+<li><a href="http://wiki.ros.org/Master">Master</a>:节点管理器，ROS名称服务 (比如帮助节点找到彼此)。</li>
+<li><a href="http://wiki.ros.org/rosout">rosout</a>: ROS中相当于stdout/stderr。</li>
+<li><a href="http://wiki.ros.org/roscore">roscore</a>: 主机+ rosout + 参数服务器 (参数服务器会在后面介绍)。</li>
+</ul>
+</blockquote>
+<h3 id="2-ros命令行">2. ROS命令行</h3>
+<ul>
+<li>列出当前运行的ROS 节点信息</li>
 </ul>
 <blockquote>
-<p>test.py 文件可以试一下多大的数会抛异常，你们机器内存都挺大的，就不停的乘一个巨大的数试试呗至于函数，类，模块这些东西都是代码组织的方式，每个人写都会不一样文章写的好坏的区别。这个有一些原则，更多的是练，天赋也某一些因素。</p>
+<p>rosnode list</p>
 </blockquote>
-<p><a href="https://github.com/DeathKing/Learning-SICP">https://github.com/DeathKing/Learning-SICP</a></p>
+<ul>
+<li>返回某个节点的信息，rosnode list 列出活跃节点后使用下面命令查看</li>
+</ul>
+<blockquote>
+<p>rosnode info /rosout</p>
+</blockquote>
+<h3 id="3-rosrun运行包内节点小乌龟模拟器启动">3. rosrun运行包内节点(小乌龟模拟器启动)</h3>
+<blockquote>
+<p>rosrun turtlesim turtlesim_node</p>
+</blockquote>
+<p>可使用上边rosnode list 查看</p>
+<p>可以使用  rosnode  ping  my_turtle 测试</p>
+<h2 id="六-ros-topic-话题">六. ROS topic 话题</h2>
+<h3 id="1-键盘控制乌龟行走">1. 键盘控制乌龟行走</h3>
+<blockquote>
+<p>$ roscore</p>
+<p>$ rosrun turtlesim turtlesin_node</p>
+<p>$ rosrun turtlesim turtle_teleop_key</p>
+</blockquote>
+<p>开启ROS ,开启ROS 乌龟模拟器，开启键盘监听节点使用键盘控制乌龟行走</p>
+<h3 id="2-rostopic命令工具介绍">2. rostopic命令工具介绍</h3>
+<p>安装rqt_graph     kinetic版本</p>
+<blockquote>
+<pre tabindex="0"><code>$ sudo apt-get install ros-&lt;distro&gt;-rqt
+$ sudo apt-get install ros-&lt;distro&gt;-rqt-common-plugins
+</code></pre></blockquote>
+<p>新终端中运行rqt,rqt可通过可视化的形式方便的查看各节点之间的话题</p>
+<blockquote>
+<p>rosrun rqt_graph rqt_graph</p>
+</blockquote>
+<p>
+  <img src="https://img-blog.csdnimg.cn/20210211010717445.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3JvdGhzY2hpbGR4aWFvYm8=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述">
+
+</p>
+<p>rostopic命令工具下的子命令，</p>
+<blockquote>
+<p>rostopic -h</p>
+</blockquote>
+<blockquote>
+<pre tabindex="0"><code>rostopic bw     display bandwidth used by topic
+rostopic echo   print messages to screen
+rostopic hz     display publishing rate of topic
+rostopic list   print information about active topics
+rostopic pub    publish data to topic
+rostopic type   print topic type
+</code></pre></blockquote>
+<p>命令的使用(使用echo命令即可将节点上的消息打印在屏幕上)</p>
+<blockquote>
+<p>rostopic  echo [topic]</p>
+<p>rostopic scho /turtle1/cmd_vel</p>
+</blockquote>
+<h3 id="3-ros-message">3. ROS Message</h3>
+<p>节点之间的通讯通过在topic上发送消息实现</p>
+<p>rostopic type 命令查看发布话题的消息类型,应该会显示：geometry_msgs/Twist</p>
+<blockquote>
+<p>rostopic type /turtle1/cmd_vel</p>
+</blockquote>
+<p>rosmsg 可以查看消息的详细情况</p>
+<blockquote>
+<p>rosmsg show geometry_msgs/Twist</p>
+</blockquote>
+<p>显示如下：</p>
+<blockquote>
+<pre tabindex="0"><code>geometry_msgs/Vector3 linear
+  float64 x
+  float64 y
+  float64 z
+geometry_msgs/Vector3 angular
+  float64 x
+  float64 y
+  float64 z
+</code></pre></blockquote>
+<h3 id="4-rostopic-上的-rostopic-pub-数据推送">4. rostopic 上的 rostopic pub 数据推送</h3>
+<p>推送乌龟行进坐标到话题上</p>
+<blockquote>
+<pre tabindex="0"><code>rostopic pub -1 /turtle1/cmd_vel geometry_msgs/Twist -- &#39;[2.0, 0.0, 0.0]&#39; &#39;[0.0, 0.0, 1.8]&#39;
+</code></pre></blockquote>
+<p>rostopic hz  数据发送频率的查询</p>
+<blockquote>
+<p>rostopic hz /turtle1/pose</p>
+</blockquote>
+<h3 id="5-rqt_plot-数据变化的绘图">5. rqt_plot 数据变化的绘图</h3>
+<p>教程中为$  rosrun rqt_plot rqt_plot 命令，实际直接使用rqt 即可调出plot窗口，如下</p>
+<p>
+  <img src="https://img-service.csdnimg.cn/img_convert/d79ed36b29c502071dc2a6f406b3cde7.png" alt="rqt_plot.png">
+
+</p>
+<h2 id="七-ros服务和参数">七. ROS服务和参数</h2>
+<p>服务（services）是节点之间通讯的另一种方式。服务允许节点发送<strong>请求（request）</strong> 并获得一个<strong>响应（response）</strong></p>
+<h3 id="1-rosservice-命令">1. rosservice 命令</h3>
+<blockquote>
+<pre tabindex="0"><code>rosservice list         输出可用服务的信息
+rosservice call         调用带参数的服务
+rosservice type         输出服务类型
+rosservice find         依据类型寻找服务find services by service type
+rosservice uri          输出服务的ROSRPC uri
+</code></pre></blockquote>
+<p>工作流总结</p>
+<blockquote>
+<p>rosservice list      查询节点可用服务</p>
+<p>rosservice type  clear   查询服务类型</p>
+<p>rosservice call clear     调用clear服务，清空turtle_node  轨迹</p>
+<p>rosservice type spawn| rossrv show   查看spawn类型</p>
+<p>rosservice call spawn 2 2 0.2 &quot;&quot;      生成新的乌龟</p>
+</blockquote>
+<h3 id="2--using-rosparam">2.  Using rosparam</h3>
+<p>rosparam 使得我们能够存储并操作ROS参数服务器上的数据</p>
+<blockquote>
+<pre tabindex="0"><code>rosparam set            设置参数
+rosparam get            获取参数
+rosparam load           从文件读取参数
+rosparam dump           向文件中写入参数
+rosparam delete         删除参数
+rosparam list           列出参数名
+</code></pre></blockquote>
+<p>rosparam list 列出turtlesim节点上的参数</p>
+<p>rosparam set and rosparam get     设置背景及查询</p>
+<blockquote>
+<pre tabindex="0"><code>rosparam set background_r 150
+rosparam get background_g
+</code></pre></blockquote>
+<p>rosparam  dump &amp; load   参数文件的写出及载入</p>
+<blockquote>
+<p>rosparam dump params.yaml</p>
+<p>rosparam dump params.yaml</p>
+</blockquote>
+<p>将yaml文件重载进新的命名空间，如copy空间</p>
+<blockquote>
+<p>rosparam load params.yaml copy</p>
+</blockquote>
+<p>get 出来看下</p>
+<blockquote>
+<p>rosparam get copy/background_b</p>
+</blockquote>
+<h2 id="八-使用-rqt_console-和-roslaunch">八. 使用 rqt_console 和 roslaunch</h2>
+<h3 id="1-安装rqt--turtlesim">1. 安装rqt &amp; turtlesim</h3>
+<blockquote>
+<pre tabindex="0"><code>sudo apt-get install ros-&lt;distro&gt;-rqt ros-&lt;distro&gt;-rqt-common-plugins ros-&lt;distro&gt;-turtlesim
+</code></pre></blockquote>
+<p>使用命令行打开rqt_console  和 rqt_logger_level查看报警等级</p>
+<pre tabindex="0"><code>$ rosrun rqt_console rqt_console
+</code></pre><pre tabindex="0"><code>$ rosrun rqt_logger_level rqt_logger_level
+</code></pre><h3 id="2-使用roslaunch">2. 使用roslaunch</h3>
+<blockquote>
+<p>roslaunch beginner_tutorials</p>
+</blockquote>
+<h3 id="3-编写解析launch-文件">3. 编写&amp;解析launch 文件</h3>
+<ul>
+<li>算是标记语言</li>
+</ul>
+<h3 id="4-使用launch启动两个小乌龟并发送速度">4. 使用launch启动两个小乌龟并发送速度</h3>
+<blockquote>
+<pre tabindex="0"><code>roslaunch beginner_tutorials turtlemimic.launch
+</code></pre></blockquote>
+<p>发送移动命令</p>
+<blockquote>
+<pre tabindex="0"><code>ostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- &#39;[2.0, 0.0, 0.0]&#39; &#39;[0.0, 0.0, -1.8]&#39;
+</code></pre></blockquote>
+<h2 id="九-使用rosed-编辑ros文件">九. 使用rosed 编辑ros文件</h2>
+<h3 id="1-使用rosed编辑-文件">1. 使用rosed编辑 文件</h3>
+<blockquote>
+<p>rosed roscpp Logger.msg</p>
+</blockquote>
+<h3 id="2--tab-补全">2.  Tab 补全</h3>
+<p>tab</p>
+<h2 id="十-创建ros消息和ros服务">十. 创建ros消息和ros服务</h2>
+<h3 id="1-创建msg">1. 创建msg</h3>
+<p>创建msg文件夹及写入消息</p>
+<blockquote>
+<pre tabindex="0"><code>$ cd ~/catkin_ws/src/beginner_tutorials
+$ mkdir msg
+$ echo &#34;int64 num&#34; &gt; msg/Num.msg
+</code></pre></blockquote>
+<p>修改packagexml.确保可以被转换为C++，Python</p>
+<blockquote>
+<pre tabindex="0"><code>  &lt;build_depend&gt;message_generation&lt;/build_depend&gt;
+  &lt;exec_depend&gt;message_runtime&lt;/exec_depend&gt;
+</code></pre></blockquote>
+<p>配置运行依赖，添加 message_runtime  修改add_message_file 函数</p>
+<h3 id="2-使用rosmsg">2. 使用rosmsg</h3>
+<blockquote>
+<p>rosmsg show beginnet_tutorials/Num</p>
+</blockquote>
+<h2 id="十一-编写消息发送器和订阅器">十一. 编写消息发送器和订阅器</h2>
+<p>在beginn_tuturial下创建src文件夹，在里边编写talker.cpp listening.cpp文件</p>
+<p>在CMakeList.txt文件中为可执行文件添加生成消息的依赖</p>
+<p>编译文件  catkin_make</p>
+<h2 id="十二-测试消息发布器和订阅器">十二. 测试消息发布器和订阅器</h2>
+<h3 id="1-source-catkin工作空间下的setupsh-文件">1. source catkin工作空间下的setup.sh 文件</h3>
+<blockquote>
+<pre tabindex="0"><code># In your catkin workspace
+$ cd ~/catkin_ws
+$ source ./devel/setup.bash
+</code></pre></blockquote>
+<ol start="2">
+<li>启动发布器和订阅器</li>
+</ol>
+<blockquote>
+<pre tabindex="0"><code>$ rosrun beginner_tutorials talker      (C++)
+$ rosrun beginner_tutorials talker.py   (Python) 
+$ rosrun beginner_tutorials listener     (C++)
+$ rosrun beginner_tutorials listener.py  (Python) 
+</code></pre></blockquote>
+<h2 id="十三-rosbag数据录制及回放">十三. rosbag数据录制及回放</h2>
+<h3 id="1-录制数据">1. 录制数据</h3>
+<blockquote>
+<p>rostopic list -v   显示所有话题</p>
+<p>mkdir ~/bagfiless</p>
+<p>cd ~/bagfiles</p>
+<p>rosbag record -a</p>
+</blockquote>
+<h3 id="2-检查并回放数据">2. 检查并回放数据</h3>
+<blockquote>
+<p>rosbag info <!-- raw HTML omitted -->      检查数据</p>
+<p>rosbag play <!-- raw HTML omitted -->     回放数据</p>
+</blockquote>
+<h2 id="十四-roswtf工具的使用">十四. roswtf工具的使用</h2>
+<h3 id="1-ros的安装检查及运行时检查">1. ros的安装检查及运行时检查</h3>
+<p>ros运行时和不运行时均可通过指令检查</p>
+<blockquote>
+<p>roscd</p>
+<p>roswtf</p>
+</blockquote>
+<h3 id="2-ros错误报告">2. ros错误报告</h3>
+<blockquote>
+<p>roscd</p>
+<p>ROS_PACKAGE_PATH=bad:$ROS_PACKAGE_PATH roswtf</p>
+</blockquote>
 
 
                 
@@ -283,7 +610,7 @@
 <div class="zs-modal-box">
 	<div class="zs-modal-head">
 		<button type="button" class="close">×</button>
-		<span class="author"><a href="https://SunshineNikola.github.io/"><img src="/img/favicon.png" />NickAuto Blog</a></span>
+		<span class="author"><a href="http://localhost:1313/"><img src="/img/favicon.png" />NickAuto Blog</a></span>
         
 	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
 		
@@ -318,10 +645,15 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/05/05/" data-toggle="tooltip" data-placement="top" title="马六甲和布城">&larr;
+                        <a href="/2024/05/19/sheng/" data-toggle="tooltip" data-placement="top" title="LearningWithShen">&larr;
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/2024/05/19/dbc/" data-toggle="tooltip" data-placement="top" title="如何制作DBC文件">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
@@ -360,6 +692,16 @@
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         
                         
                         

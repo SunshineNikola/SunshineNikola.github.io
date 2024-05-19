@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>周立功 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E5%91%A8%E7%AB%8B%E5%8A%9F/</link>
+    <description>Recent content in 周立功 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:21:21 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E5%91%A8%E7%AB%8B%E5%8A%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CANTest及CANPro软件滤波设置说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/can/</link>
+      <pubDate>Mon, 20 May 2024 00:21:21 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/can/</guid>
+      <description>使用 CANTest 及 CANPro 软件并选择 USBCAN-II 这个设备进行滤波时，您可能会发现和广成 科技 ECANtoools 软件简便的滤波设置有所不同，软件需要您输入一个验收码和屏蔽码，此时 需要您根</description>
+    </item>
+  </channel>
+</rss>

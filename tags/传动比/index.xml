@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>传动比 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/%E4%BC%A0%E5%8A%A8%E6%AF%94/</link>
+    <description>Recent content in 传动比 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:14:15 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/%E4%BC%A0%E5%8A%A8%E6%AF%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>车辆方向盘转角传动比标定方法</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/jiao/</link>
+      <pubDate>Mon, 20 May 2024 00:14:15 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/jiao/</guid>
+      <description>车辆方向盘转角传动比标定方法 ​ 在自动泊车开发及测试过程中，必须要使用车辆方向盘转角传动比参数。方向盘转角传动比对应着不同方向盘转角与车辆转弯</description>
+    </item>
+  </channel>
+</rss>

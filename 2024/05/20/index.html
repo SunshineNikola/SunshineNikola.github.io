@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="NickAuto Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/popo.jpg">
+    <meta property="twitter:image" content="/img/popo.jpg" />
+    
+
+    
+    <meta name="title" content="APA系统中超声波雷达的安装调试使用说明" />
+    <meta property="og:title" content="APA系统中超声波雷达的安装调试使用说明" />
+    <meta property="twitter:title" content="APA系统中超声波雷达的安装调试使用说明" />
+    
+
+    
+    <meta name="description" content=" ">
+    <meta property="og:description" content=" " />
+    <meta property="twitter:description" content=" " />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="尼克汽车, NickAuto, 自动驾驶, 汽车出海, 航空航天">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>APA系统中超声波雷达的安装调试使用说明 | 尼克汽车 | NickAuto</title>
+
+    <link rel="canonical" href="/2024/05/20/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">NickAuto Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%EF%B8%8Flife/">🏕️life</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/auto/">🚘auto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%EF%B8%8Ftech/">🛰️tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/popo.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/apa" title="APA">
+                            APA
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E8%B6%85%E5%A3%B0%E6%B3%A2%E9%9B%B7%E8%BE%BE" title="超声波雷达">
+                            超声波雷达
+                        </a>
+                        
+                    </div>
+                    <h1>APA系统中超声波雷达的安装调试使用说明</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                     &#34;Ambrose&#34;
+                             
+                            on 
+                            Monday, May 20, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p>@[TOC]</p>
+<h2 id="前言">前言：</h2>
+<p>在传统APA自动泊车系统中，通常使用超声波雷达进行车辆前后辈避障以及侧向车位探测。目前市场上大多数带有自动泊车功能的车辆均配有12个超声波雷达，本文从硬件安装及超声波雷达调试标定两方面对自动泊车超声波雷达的安装调试进行说明
+
+  <img src="pic/apa1.png" alt="apa1.png">
+
+</p>
+<h2 id="1-硬件安装">1 硬件安装</h2>
+<p>自动泊车配置的超声波雷达一般为两组12个雷达探头。单组6个雷达探头串联，其中第1和第6号雷达为长距LRU雷达，2-4号为短距SRU避障雷达。超声探头均采用Lin通讯或IO口进行通讯。</p>
+<h3 id="11-安装位置选择">1.1 安装位置选择</h3>
+<p>如前言示意图所示12个超声波雷达，车头和车尾分别为两组探头。其中车辆左右两侧为长距探头，车头车尾避障雷达为短距雷达。短距雷达均匀分布在车头车尾，垂直于车身前后保险杠。没有俯仰角及左右偏角。四只长距超声波雷达垂直于车身车辆对称轴。超声安装高度位于50-60cm 高度左右视情况而定。由于探头垂直方向FOV过大造成探头探地问题可通过安装后调试标定解决。安装完成后的多路超声FOV示意图如下(备注：APA系统中车位探测雷达一般使用车头左右两个侧向长距雷达基本可完成车位探测功能。在其他方案中，车尾长距LRU基本作为检车位传感器冗余配置或者侧向并线辅助系统传感器配置故下图中并未绘制车尾LRU雷达FOV)：
+￼
+  <img src="pic/apa2.png" alt="在这里插入图片描述">
+
+</p>
+<h3 id="12-安装细节注意">1.2 安装细节注意</h3>
+<blockquote>
+<p>超声波雷达由：探头橡胶圈 探头夹具 探芯 下部橡胶圈 探头壳体 背部PCB板 六部分构成。
+
+  <img src="pic/apa3.png" alt="在这里插入图片描述">
+
+
+￼
+安装过程中使用定制安装夹具，先将安装夹具与车辆保险杠内的夹具定位标识对齐，然后压融粘结。后将超声探头按照夹具配合卡口推如卡紧即可，注意保险杠外侧探头橡胶圈与保险杠连接处侧向挤压力不得过大，安装时注意探头方向。(注意：探头安装过程中必须严格按照超声厂商指导安装方式安装，一般指定车型量产时需提前交付超声厂商车辆前后保险杠数模结构及一套前后保险杠实物进行安装位置设计评估)
+
+  <img src="pic/apa4.png" alt="在这里插入图片描述">
+
+
+￼</p>
+</blockquote>
+<h2 id="2-调试标定">2 调试标定</h2>
+<h3 id="21-探测距离复核">2.1 探测距离复核</h3>
+<p>超声波雷达安装完成之后通过Lin或IO连接成功后一般即可进行使用。
+实际使用过程中环境温度，空气湿度，震动均可对超声测距造成误差。在复核超声测距过程中如果测距存在误差需考虑环境变量的影响</p>
+<h3 id="22-调试板调试标定">2.2 调试板调试标定</h3>
+<h4 id="221-调试板介绍">2.2.1 调试板介绍</h4>
+<p>超声波雷达调试板
+￼
+  <img src="pic/apa5.png" alt="在这里插入图片描述">
+
+![</p>
+<p>](image.png)</p>
+<h4 id="222-参数细节解释">2.2.2 参数细节解释</h4>
+<p>超声波雷达调试板上位机显示为原始模拟信号。模拟信号窗口横轴为周期，纵轴为信号强度。探头发出超声波在遇到障碍物后模拟信号峰值会增大。
+￼
+  <img src="pic/apa6.png" alt="在这里插入图片描述">
+
+
+其中单个周期中收到的超声波强度随着距离的增大，TOF时间变长。收到的回波强度越弱。上图调试上位机中蓝色线增益对收到回波强度进行了补偿。
+图中粉色线条为阈值。一共9段对不同tof时间段下收到的回波进行了过滤。只有回波峰值超过阈值才能收到障碍物探测，否则会进行忽略。</p>
+<h4 id="223-调试标定标准">2.2.3 调试标定标准</h4>
+<p>超声波雷达调试标定完成后应该在标准工况下测距准确。合理的增益和阈值可以合理增强回波强度，过滤不需要的超声噪点避免超声探地
+
+  <img src="pic/apa7.png" alt="在这里插入图片描述">
+
+</p>
+<blockquote>
+<p>[超声上位机调试软件]https://download.csdn.net/download/rothschildxiaobo/11189885)</p>
+</blockquote>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="http://localhost:1313/"><img src="/img/favicon.png" />NickAuto Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/05/20/can/" data-toggle="tooltip" data-placement="top" title="CANTest及CANPro软件滤波设置说明">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://www.nikola.ltd">nikola的官网</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:ambrose@nikola.ltd">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/lyb/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="NickAuto Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; NickAuto Blog 2024
+                    
+                    <br>
+                    
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag2 on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/tags/tag2/</link>
+    <description>Recent content in Tag2 on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:46:35 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab读取处理Excel数据并拟合正态分布曲线</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/nihe/</link>
+      <pubDate>Mon, 20 May 2024 00:46:35 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/nihe/</guid>
+      <description>clc,clear,close; % 导入数据 data = xlsread(&amp;lsquo;5555.xlsx&amp;rsquo;,1); RealWidth = data(:,2); DetectWidth = data(:,1); D_Value = DetectWidth - RealWidth; % 求 D_Value 平均值 % 绘制散点图像 subplot(2,1,1); plot(D_Value,&amp;rsquo;*&amp;rsquo;); title(&amp;lsquo;垂直库位停车后相对位置误差离散图&amp;rsquo</description>
+    </item>
+    <item>
+      <title>Matlab 绘制三维散点图并进行曲面拟合</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/lisan/</link>
+      <pubDate>Mon, 20 May 2024 00:44:18 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/lisan/</guid>
+      <description>Matlab散点绘制及曲面拟合 近期在进行APA自动辅助泊车项目的测试过程中遇到多变量对结果的影响分析问题。需要对自动泊车库位检测系统中车辆行</description>
+    </item>
+    <item>
+      <title>通过 Matlab cameraCalibrator Tool 标定相机获取畸变参数</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/camcalibration/</link>
+      <pubDate>Mon, 20 May 2024 00:39:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/camcalibration/</guid>
+      <description>摄像机标定 本文目的在于记录对相机进行径向及切向畸变的简单标定方法* 计算机视觉进行检测识别前均需对相机进行标定。本文简单介绍了通过Matlab</description>
+    </item>
+  </channel>
+</rss>

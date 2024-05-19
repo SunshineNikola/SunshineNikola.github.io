@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="NickAuto Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="/img/popo.jpg">
+    <meta property="twitter:image" content="/img/popo.jpg" />
+    
+
+    
+    <meta name="title" content="CANTest及CANPro软件滤波设置说明" />
+    <meta property="og:title" content="CANTest及CANPro软件滤波设置说明" />
+    <meta property="twitter:title" content="CANTest及CANPro软件滤波设置说明" />
+    
+
+    
+    <meta name="description" content=" ">
+    <meta property="og:description" content=" " />
+    <meta property="twitter:description" content=" " />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="尼克汽车, NickAuto, 自动驾驶, 汽车出海, 航空航天">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>CANTest及CANPro软件滤波设置说明 | 尼克汽车 | NickAuto</title>
+
+    <link rel="canonical" href="/2024/05/20/can/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link rel="stylesheet" href="/css/font-awesome.all.min.css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">NickAuto Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">All Posts</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%EF%B8%8Flife/">🏕️life</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/auto/">🚘auto</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%EF%B8%8Ftech/">🛰️tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/archive//">ARCHIVE</a></li>
+                    
+                        <li><a href="/about//">ABOUT</a></li>
+                    
+		            <li>
+                        <a href="/search"><i class="fa fa-search"></i></a>
+		           </li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/popo.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E5%91%A8%E7%AB%8B%E5%8A%9F" title="周立功">
+                            周立功
+                        </a>
+                        
+                        <a class="tag" href="/tags/%E5%B9%BF%E6%88%90%E7%A7%91%E6%8A%80" title="广成科技">
+                            广成科技
+                        </a>
+                        
+                        <a class="tag" href="/tags/can" title="CAN">
+                            CAN
+                        </a>
+                        
+                    </div>
+                    <h1>CANTest及CANPro软件滤波设置说明</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                     &#34;Ambrose&#34;
+                             
+                            on 
+                            Monday, May 20, 2024
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <p><em>使用 CANTest 及 CANPro 软件并选择 USBCAN-II 这个设备进行滤波时，您可能会发现和广成 科技 ECANtoools 软件简便的滤波设置有所不同，软件需要您输入一个验收码和屏蔽码，此时 需要您根据自己的需求来进行计算。下面进行举例说明。</em></p>
+<h3 id="一单-id-滤波">一、单 ID 滤波</h3>
+<p>比如我们只需要一个帧 ID，比如标准帧 7E8，我们应该如何计算验收码和屏蔽码呢？答案 是依靠 CANTest 自带的滤波计算器（这个功能 CANPro 是没有的）。点击 CANTest 左上角的“滤 波设置”，进入后选择“标准帧 单滤波（设定接收单个 ID）”，填写指定的 ID，如下图所示。 这样你就得到了验收码和屏蔽码，记下来回去输入就行了，你将只会收到 ID 为 7E8 的数据。
+
+  <img src="pic/pic1.png" alt="pic1">
+
+
+下面解释下这东西怎么算的，对接下来计算一段滤波有帮助。先把 7E8 按照 8421 码拆开， 正好是 11111101000，把这个数中间的空格去除，再把这段数从左往右读，11111101000， 用 8421 码装回去，就变成了 FD0，这样就变成了验收码的前半段了。验收码的作用就是去和 接收到的所有帧 ID 进行比较，只有每一个位都一样才肯放过去，并显示出来。而屏蔽码则是 验收码的爸爸，假如它某一个位是 1 的话，验收码的滤波将失效。即如果屏蔽码是 0xFFFFFFFF 的话，滤波功能将完全失效，不管你验收码如何填写。</p>
+<p>Tips：验收码和屏蔽码都是 32 位的寄存器。</p>
+<p>回到刚才的问题，我们肯定不希望屏蔽码这个爸爸干扰验收码的小把戏，所以从左数第 12 个位开始全都要是1，所以屏蔽码为前11位挂0，后面全是1，即000000000001111111111111 11111111，翻译过来就是 001FFFFF。验收码就不说了，要保证前面是 FD0，后面补 0，即 FD00 0000。</p>
+<h3 id="二id-段滤波">二、ID 段滤波</h3>
+<p>假如我们需要一个段的 ID，比如标准帧 138-13F（这个段是特殊的，下文会提），我们应该 如何计算呢？这相比于刚才稍显麻烦，我们首先要把 138 和 13F 进行 8421 拆分。注意要拆成 11 位的，不能弄成 12 位的。</p>
+<blockquote>
+<p>138：00100111000
+13F：00100111111</p>
+</blockquote>
+<p>对比一下发现前面都一样，后三位不一样，说明后三位我们不关心，前面弄对就行。好了， 我们得到了一串想要的数，00100111XXX，把这个数输入到 CANTest 滤波设置中的“标准帧 单 滤波（仅 ID，自由设定）”中即可。
+
+  <img src="pic/pic2.png" alt="pic2">
+
+
+如你所愿的得到了你需要的验收码和屏蔽码。</p>
+<p>那么我觉得这个段太大了怎么办，比如比如我需要标准帧 ID 为 322-325，这个段怎么计算 呢？老办法，8421 拆分。</p>
+<blockquote>
+<p>322：01100100010
+325：01100100101</p>
+</blockquote>
+<p>有问题了，发现了分歧，如果后三位都不管的话 326 肯定会掺进来，老办法失灵了。这个 时候需要用双滤波，即双重滤波，那我们需要的很显然是 0110010001X 和 0110010010X 这两 个组合。</p>
+<p>选择“标准帧 双滤波（仅 ID，自由设定）”这个选项就 OK 了，如图，你得到了你想要的 验收码和屏蔽码。
+
+  <img src="pic/pic3.png" alt="pic3">
+
+</p>
+
+
+                
+                
+<div class="entry-shang text-center">
+    
+	    <p>「真诚赞赏，手留余香」</p>
+	
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
+</div>
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://SunshineNikola.github.io/"><img src="/img/favicon.png" />NickAuto Blog</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
+	</div>
+</div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/05/20/jiao/" data-toggle="tooltip" data-placement="top" title="车辆方向盘转角传动比标定方法">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2024/05/20/apa/" data-toggle="tooltip" data-placement="top" title="APA系统中超声波雷达的安装调试使用说明">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/tag1" title="tag1">
+                            tag1
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/tag2" title="tag2">
+                            tag2
+                        </a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                        <li><a target="_blank" href="https://www.nikola.ltd">nikola的官网</a></li>
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:ambrose@nikola.ltd">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/lyb/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="NickAuto Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; NickAuto Blog 2024
+                    
+                    <br>
+                    
+                    
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

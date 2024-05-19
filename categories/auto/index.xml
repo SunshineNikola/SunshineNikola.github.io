@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>🚘Auto on NickAuto Blog</title>
+    <link>https://SunshineNikola.github.io/categories/auto/</link>
+    <description>Recent content in 🚘Auto on NickAuto Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 20 May 2024 00:44:18 +0800</lastBuildDate>
+    <atom:link href="https://SunshineNikola.github.io/categories/auto/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab 绘制三维散点图并进行曲面拟合</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/lisan/</link>
+      <pubDate>Mon, 20 May 2024 00:44:18 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/lisan/</guid>
+      <description>Matlab散点绘制及曲面拟合 近期在进行APA自动辅助泊车项目的测试过程中遇到多变量对结果的影响分析问题。需要对自动泊车库位检测系统中车辆行</description>
+    </item>
+    <item>
+      <title>APA系统中超声波雷达的安装调试使用说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/apa/</link>
+      <pubDate>Mon, 20 May 2024 00:26:47 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/apa/</guid>
+      <description>@[TOC] 前言： 在传统APA自动泊车系统中，通常使用超声波雷达进行车辆前后辈避障以及侧向车位探测。目前市场上大多数带有自动泊车功能的车辆均配有12个</description>
+    </item>
+    <item>
+      <title>CANTest及CANPro软件滤波设置说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/can/</link>
+      <pubDate>Mon, 20 May 2024 00:21:21 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/can/</guid>
+      <description>使用 CANTest 及 CANPro 软件并选择 USBCAN-II 这个设备进行滤波时，您可能会发现和广成 科技 ECANtoools 软件简便的滤波设置有所不同，软件需要您输入一个验收码和屏蔽码，此时 需要您根</description>
+    </item>
+    <item>
+      <title>车辆方向盘转角传动比标定方法</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/jiao/</link>
+      <pubDate>Mon, 20 May 2024 00:14:15 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/jiao/</guid>
+      <description>车辆方向盘转角传动比标定方法 ​ 在自动泊车开发及测试过程中，必须要使用车辆方向盘转角传动比参数。方向盘转角传动比对应着不同方向盘转角与车辆转弯</description>
+    </item>
+    <item>
+      <title>如何制作DBC文件</title>
+      <link>https://SunshineNikola.github.io/2024/05/19/dbc/</link>
+      <pubDate>Sun, 19 May 2024 23:51:02 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/19/dbc/</guid>
+      <description>​ CANdb++ 制作DBC文件 刚看到55号小白鸭的教程挺好的，贴上地址 第55号小白鸭的教程 一：安装好CANdb++ 软件； 二：打开CANdb++如图 创建一</description>
+    </item>
+  </channel>
+</rss>

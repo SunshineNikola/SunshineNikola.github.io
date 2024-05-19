@@ -6,13 +6,41 @@
     <description>Recent content in 🛰️Tech on NickAuto Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 May 2024 23:16:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2024 00:48:28 +0800</lastBuildDate>
     <atom:link href="https://SunshineNikola.github.io/categories/%EF%B8%8Ftech/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Matlab 离散数据的高斯分布曲线绘制</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/shuju/</link>
+      <pubDate>Mon, 20 May 2024 00:48:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/shuju/</guid>
+      <description>在研发测试工作中经常会有一些工程数据的处理，其中大部分数据都是符合正态分布的。为了对数据进行整理分析通常我们会求出数据的误差平均数，最大最小</description>
+    </item>
+    <item>
+      <title>Matlab读取处理Excel数据并拟合正态分布曲线</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/nihe/</link>
+      <pubDate>Mon, 20 May 2024 00:46:35 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/nihe/</guid>
+      <description>clc,clear,close; % 导入数据 data = xlsread(&amp;lsquo;5555.xlsx&amp;rsquo;,1); RealWidth = data(:,2); DetectWidth = data(:,1); D_Value = DetectWidth - RealWidth; % 求 D_Value 平均值 % 绘制散点图像 subplot(2,1,1); plot(D_Value,&amp;rsquo;*&amp;rsquo;); title(&amp;lsquo;垂直库位停车后相对位置误差离散图&amp;rsquo</description>
+    </item>
+    <item>
+      <title>通过 Matlab cameraCalibrator Tool 标定相机获取畸变参数</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/camcalibration/</link>
+      <pubDate>Mon, 20 May 2024 00:39:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/camcalibration/</guid>
+      <description>摄像机标定 本文目的在于记录对相机进行径向及切向畸变的简单标定方法* 计算机视觉进行检测识别前均需对相机进行标定。本文简单介绍了通过Matlab</description>
+    </item>
+    <item>
+      <title>ROS 初级教程学习笔记</title>
+      <link>https://SunshineNikola.github.io/2024/05/19/ros/</link>
+      <pubDate>Sun, 19 May 2024 23:47:00 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/19/ros/</guid>
+      <description>ROS 初级教程学习笔记 a 环境的配置及软件包的创建和编译 b ROS 节点，话题，服务和参数 (rqt_console和roslaunch)调试 c 创建ROS消</description>
+    </item>
+    <item>
       <title>LearningWithShen</title>
-      <link>https://SunshineNikola.github.io/2024/05/19/</link>
+      <link>https://SunshineNikola.github.io/2024/05/19/sheng/</link>
       <pubDate>Sun, 19 May 2024 23:16:17 +0800</pubDate>
-      <guid>https://SunshineNikola.github.io/2024/05/19/</guid>
+      <guid>https://SunshineNikola.github.io/2024/05/19/sheng/</guid>
       <description>LearningWithShen 📙书籍 第一推动丛书：综合系列：逻辑的引擎 理论 计算机理论基础。计算机产生的历史，计算机理论基础数理逻辑。可计算问题 第二本：现代计算机的硬件基</description>
     </item>
   </channel>

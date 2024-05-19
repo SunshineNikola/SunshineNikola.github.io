@@ -6,13 +6,76 @@
     <description>Recent content in Posts on NickAuto Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 May 2024 23:16:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 May 2024 00:48:28 +0800</lastBuildDate>
     <atom:link href="https://SunshineNikola.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Matlab 离散数据的高斯分布曲线绘制</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/shuju/</link>
+      <pubDate>Mon, 20 May 2024 00:48:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/shuju/</guid>
+      <description>在研发测试工作中经常会有一些工程数据的处理，其中大部分数据都是符合正态分布的。为了对数据进行整理分析通常我们会求出数据的误差平均数，最大最小</description>
+    </item>
+    <item>
+      <title>Matlab读取处理Excel数据并拟合正态分布曲线</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/nihe/</link>
+      <pubDate>Mon, 20 May 2024 00:46:35 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/nihe/</guid>
+      <description>clc,clear,close; % 导入数据 data = xlsread(&amp;lsquo;5555.xlsx&amp;rsquo;,1); RealWidth = data(:,2); DetectWidth = data(:,1); D_Value = DetectWidth - RealWidth; % 求 D_Value 平均值 % 绘制散点图像 subplot(2,1,1); plot(D_Value,&amp;rsquo;*&amp;rsquo;); title(&amp;lsquo;垂直库位停车后相对位置误差离散图&amp;rsquo</description>
+    </item>
+    <item>
+      <title>Matlab 绘制三维散点图并进行曲面拟合</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/lisan/</link>
+      <pubDate>Mon, 20 May 2024 00:44:18 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/lisan/</guid>
+      <description>Matlab散点绘制及曲面拟合 近期在进行APA自动辅助泊车项目的测试过程中遇到多变量对结果的影响分析问题。需要对自动泊车库位检测系统中车辆行</description>
+    </item>
+    <item>
+      <title>通过 Matlab cameraCalibrator Tool 标定相机获取畸变参数</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/camcalibration/</link>
+      <pubDate>Mon, 20 May 2024 00:39:28 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/camcalibration/</guid>
+      <description>摄像机标定 本文目的在于记录对相机进行径向及切向畸变的简单标定方法* 计算机视觉进行检测识别前均需对相机进行标定。本文简单介绍了通过Matlab</description>
+    </item>
+    <item>
+      <title>APA系统中超声波雷达的安装调试使用说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/apa/</link>
+      <pubDate>Mon, 20 May 2024 00:26:47 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/apa/</guid>
+      <description>@[TOC] 前言： 在传统APA自动泊车系统中，通常使用超声波雷达进行车辆前后辈避障以及侧向车位探测。目前市场上大多数带有自动泊车功能的车辆均配有12个</description>
+    </item>
+    <item>
+      <title>CANTest及CANPro软件滤波设置说明</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/can/</link>
+      <pubDate>Mon, 20 May 2024 00:21:21 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/can/</guid>
+      <description>使用 CANTest 及 CANPro 软件并选择 USBCAN-II 这个设备进行滤波时，您可能会发现和广成 科技 ECANtoools 软件简便的滤波设置有所不同，软件需要您输入一个验收码和屏蔽码，此时 需要您根</description>
+    </item>
+    <item>
+      <title>车辆方向盘转角传动比标定方法</title>
+      <link>https://SunshineNikola.github.io/2024/05/20/jiao/</link>
+      <pubDate>Mon, 20 May 2024 00:14:15 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/20/jiao/</guid>
+      <description>车辆方向盘转角传动比标定方法 ​ 在自动泊车开发及测试过程中，必须要使用车辆方向盘转角传动比参数。方向盘转角传动比对应着不同方向盘转角与车辆转弯</description>
+    </item>
+    <item>
+      <title>如何制作DBC文件</title>
+      <link>https://SunshineNikola.github.io/2024/05/19/dbc/</link>
+      <pubDate>Sun, 19 May 2024 23:51:02 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/19/dbc/</guid>
+      <description>​ CANdb++ 制作DBC文件 刚看到55号小白鸭的教程挺好的，贴上地址 第55号小白鸭的教程 一：安装好CANdb++ 软件； 二：打开CANdb++如图 创建一</description>
+    </item>
+    <item>
+      <title>ROS 初级教程学习笔记</title>
+      <link>https://SunshineNikola.github.io/2024/05/19/ros/</link>
+      <pubDate>Sun, 19 May 2024 23:47:00 +0800</pubDate>
+      <guid>https://SunshineNikola.github.io/2024/05/19/ros/</guid>
+      <description>ROS 初级教程学习笔记 a 环境的配置及软件包的创建和编译 b ROS 节点，话题，服务和参数 (rqt_console和roslaunch)调试 c 创建ROS消</description>
+    </item>
+    <item>
       <title>LearningWithShen</title>
-      <link>https://SunshineNikola.github.io/2024/05/19/</link>
+      <link>https://SunshineNikola.github.io/2024/05/19/sheng/</link>
       <pubDate>Sun, 19 May 2024 23:16:17 +0800</pubDate>
-      <guid>https://SunshineNikola.github.io/2024/05/19/</guid>
+      <guid>https://SunshineNikola.github.io/2024/05/19/sheng/</guid>
       <description>LearningWithShen 📙书籍 第一推动丛书：综合系列：逻辑的引擎 理论 计算机理论基础。计算机产生的历史，计算机理论基础数理逻辑。可计算问题 第二本：现代计算机的硬件基</description>
     </item>
     <item>
